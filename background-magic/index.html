@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background-Magic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="sec"></section>
+    <script>
+        var section = document.querySelector('.sec');
+
+        for(var i=1; i<=350;i++){
+
+            var div = document.createElement('div');
+            div.classList.add('box');
+
+            section.appendChild(div)
+        }
+
+        function animateBox(){
+            var boxes = document.querySelectorAll('.box');
+            let color = Math.floor(Math.random()* boxes.length);
+            boxes[color].classList.add('anime');
+        }
+        setInterval(animateBox,100)
+    </script>
+</body>
+</html>
